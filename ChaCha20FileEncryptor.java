@@ -14,8 +14,8 @@ public class ChaCha20FileEncryptor {
 
     public static void main(String[] args) throws Exception {
         // User input for nonce
-        String email = "user@example.com"; // Replace with user-provided email
-        String phoneNumber = "1234567890"; // Replace with user-provided phone number
+        String email = "minemienr363@example.com"; // Replace with user-provided email
+        String phoneNumber = "9961624668"; // Replace with user-provided phone number
 
         // Derive nonce from email and phone number
         byte[] nonce = generateNonceFromUserInput(email, phoneNumber);
