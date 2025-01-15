@@ -1,12 +1,11 @@
+import java.io.File;
+import java.io.FileOutputStream;
+import java.nio.file.Files;
+import java.security.SecureRandom;
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.ChaCha20ParameterSpec;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.nio.file.Files;
-import java.security.SecureRandom;
 
 public class ChaCha20FileEncryptor {
 
@@ -59,8 +58,10 @@ public class ChaCha20FileEncryptor {
         System.arraycopy(emailBytes, 0, nonce, 0, Math.min(emailBytes.length, 4));
         System.arraycopy(phoneBytes, 0, nonce, 4, Math.min(phoneBytes.length, 4));
 
-        // Fill the rest of the nonce with random bytes
-        new SecureRandom().nextBytes(nonce, 8, 4);
+        // Generate random bytes for the remaining part of the nonce
+        byte[] randomBytes = new byte[4]; // Remaining 4 bytes
+        new SecureRandom().nextBytes(randomBytes);
+        System.arraycopy(randomBytes, 0, nonce, 8, 4);
 
         return nonce;
     }
