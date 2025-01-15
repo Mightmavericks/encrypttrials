@@ -22,10 +22,10 @@ public class ChaCha20FileEncryptor6 {
         byte[] nonce = generateNonceFromUserInput(email, phoneNumber);
 
         // Input and output file paths
-        File inputFile = new File("Infested.AKA.Vermines.2023.480p.WEB-DL.Hindi.French.ESubs.MoviesMod.red.mkv"); // Replace with your file path
+        File inputFile = new File("input.txt"); // Replace with your file path
         String doubleEncryptedFileName = "double_encrypted_aesctr_" + encodeNonce(nonce) + ".dat";
         File doubleEncryptedFile = new File(doubleEncryptedFileName);
-        File decryptedFile = new File("decrypted.mkv");
+        File decryptedFile = new File("decrypted.txt");
 
         // Generate keys
         SecretKey chachaKey = generateKey();
