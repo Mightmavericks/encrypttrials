@@ -1,14 +1,13 @@
+import java.io.File;
+import java.io.FileOutputStream;
+import java.nio.file.Files;
+import java.security.SecureRandom;
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.ChaCha20ParameterSpec;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.nio.file.Files;
-import java.security.SecureRandom;
 
-public class ChaCha20FileEncryptor {
+public class trialencrypt {
 
     private static final int NONCE_LENGTH = 12; // Nonce length for ChaCha20 (96 bits)
     private static final int KEY_LENGTH = 256; // Key length in bits
