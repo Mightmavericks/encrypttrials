@@ -9,7 +9,7 @@ import javax.crypto.spec.IvParameterSpec;
 
 public class ChaCha20FileEncryptor6 {
 
-    private static final int NONCE_LENGTH = 12; // Nonce length for ChaCha20 (96 bits)
+    private static final int NONCE_LENGTH = 12; // 1Nonce length for ChaCha20 (96 bits)
     private static final int IV_LENGTH = 16; // IV length for AES-CTR (128 bits)
     private static final int KEY_LENGTH = 256; // Key length in bits
 
@@ -22,10 +22,10 @@ public class ChaCha20FileEncryptor6 {
         byte[] nonce = generateNonceFromUserInput(email, phoneNumber);
 
         // Input and output file paths
-        File inputFile = new File("input.txt"); // Replace with your file path
+        File inputFile = new File("inputimg.w"); // Replace with your file path
         String doubleEncryptedFileName = "double_encrypted_aesctr_" + encodeNonce(nonce) + ".dat";
         File doubleEncryptedFile = new File(doubleEncryptedFileName);
-        File decryptedFile = new File("decrypted.txt");
+        File decryptedFile = new File("decrypted.webp");
 
         // Generate keys
         SecretKey chachaKey = generateKey();
