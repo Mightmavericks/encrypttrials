@@ -22,7 +22,7 @@ public class ChaCha20FileEncryptor6 {
         byte[] nonce = generateNonceFromUserInput(email, phoneNumber);
 
         // Input and output file paths
-        File inputFile = new File("inputimg.w"); // Replace with your file path
+        File inputFile = new File("inputimg.webp"); // Replace with your file path
         String doubleEncryptedFileName = "double_encrypted_aesctr_" + encodeNonce(nonce) + ".dat";
         File doubleEncryptedFile = new File(doubleEncryptedFileName);
         File decryptedFile = new File("decrypted.webp");
